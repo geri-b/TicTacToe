@@ -37,7 +37,7 @@ public class Main {
                 symbol = 'O';
             }
 
-            //Keep track of the turn, tell which player/color plays
+            //Keep track of the turn, tell which player plays
             if (first_choice) {
                 System.out.println(player1);
             } else {
@@ -106,7 +106,6 @@ public class Main {
 
 
 
-    // Since we're using JavaFX we do not need the following function
     public static void DrawBoard(char[][] ttt_board) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -118,7 +117,6 @@ public class Main {
     }
 
     //Function to check who has won
-    //We need some slight changes when converting to JavaFX
     public static char Won(char[][] ttt_board) {
         for (int i = 0; i < 3; i++) {
             if (ttt_board[i][0] == ttt_board[i][1] && ttt_board[i][1] ==
@@ -127,7 +125,7 @@ public class Main {
             }
         }
 
-        //Check Cols
+        //Check Columns
         for (int j = 0; j < 3; j++) {
             if (ttt_board[0][j] == ttt_board[1][j] && ttt_board[1][j] == ttt_board[2][j] && ttt_board[0][j] != '-') {
                 return ttt_board[0][j];
